@@ -4,7 +4,7 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Shopify Test Run`,
+    title: `🦄 It's Hee Haw Donkey Time!`,
     description: `If at first you don't succeed, keep on suckin' until you do.`,
     author: `The Cool Kids`,
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
