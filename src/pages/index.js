@@ -10,9 +10,9 @@ const IndexPage = ({ data }) => (
     <Seo title="Home" />
     <h1>We sell stuff!</h1>
     {data.allShopifyProduct.edges.map(({ node }) => (
-      <div class="product" key={node.shopifyId}>
+      <div className="product" key={node.shopifyId}>
         <h3>{node.title}</h3>
-        <img class="product-image" src={node.images[0].src} />
+        <img className="product-image" src={node.images[0].src} />
         <p>{node.description}</p>
       </div>
     ))}
