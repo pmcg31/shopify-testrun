@@ -23,14 +23,10 @@ const Product = ({ product }) => {
       product.priceRangeV2.minVariantPrice.currencyCode
   }
 
-  let addToCartClassName = "add-to-cart"
-  let disabled = false
-  let addToCartText = "Add to Cart"
-  if (product.totalInventory === 0) {
-    addToCartClassName = "add-to-cart-disabled"
-    disabled = true
-    addToCartText = "Sold Out!"
-  }
+  const isSoldOut = product.totalInventory === 0
+  let addToCartClassName = isSoldOut ? "add-to-cart-disabled" : "add-to-cart"
+  let disabled = isSoldOut
+  let addToCartText = isSoldOut ? "Sold Out!" : "Add to Cart"
 
   async function addProductToCart() {
     // Get the variant ID
