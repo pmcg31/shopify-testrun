@@ -9,6 +9,10 @@ import { doc } from "prettier"
 const CartIcon = () => {
   const { checkout, doCheckout } = React.useContext(StoreContext)
 
+  const isCartEmpty = checkout.lineItems.length === 0
+
+  console.log("Empty cart? " + isCartEmpty)
+
   console.log("checkout:")
   console.log(checkout)
   console.log("checkout.lineItems[" + checkout.lineItems.length + "]: ")
@@ -41,6 +45,7 @@ const CartIcon = () => {
         className="add-to-cart checkout-now"
         id="checkout-now"
         onClick={checkoutNow}
+        disabled={isCartEmpty}
       >
         Checkout Now
       </button>
