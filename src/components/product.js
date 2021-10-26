@@ -1,4 +1,5 @@
 import React from "react"
+import { GatsbyImage } from "gatsby-plugin-image"
 import { StoreContext } from "./store-context"
 
 const Product = ({ product }) => {
@@ -22,7 +23,7 @@ const Product = ({ product }) => {
 
     <div className="product" key={product.shopifyId}>
       <h3>{product.title}</h3>
-      <img className="product-image" src={product.images[0].src} />
+      <GatsbyImage alt={product.title} className="product-image" image={product.images[0].gatsbyImageData} imgStyle={{objectFit: "contain"}} />
       <p>{product.description}</p>
       <button className="add-to-cart" onClick={addProductToCart}>
         Add to Cart
