@@ -24,9 +24,8 @@ const Product = ({ product }) => {
   }
 
   const isSoldOut = product.totalInventory === 0
-  let addToCartClassName = isSoldOut ? "add-to-cart-disabled" : "add-to-cart"
-  let disabled = isSoldOut
-  let addToCartText = isSoldOut ? "Sold Out!" : "Add to Cart"
+  const addToCartClassName = isSoldOut ? "add-to-cart-disabled" : "add-to-cart"
+  const addToCartText = isSoldOut ? "Sold Out!" : "Add to Cart"
 
   async function addProductToCart() {
     // Get the variant ID
@@ -57,7 +56,7 @@ const Product = ({ product }) => {
       <button
         className={addToCartClassName}
         onClick={addProductToCart}
-        disabled={disabled}
+        disabled={isSoldOut}
       >
         {addToCartText}
       </button>
