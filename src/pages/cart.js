@@ -4,7 +4,6 @@ import { Link } from "gatsby"
 import { StoreContext } from "../components/store-context"
 import Layout from "../components/layout"
 import CartItem from "../components/cart-item"
-import { doc } from "prettier"
 
 const CartIcon = () => {
   const { checkout, doCheckout } = React.useContext(StoreContext)
