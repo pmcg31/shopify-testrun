@@ -51,9 +51,7 @@ export const query = graphql`
             price
           }
           images {
-            height
-            width
-            src
+            gatsbyImageData
           }
         }
       }
