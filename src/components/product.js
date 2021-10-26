@@ -24,11 +24,11 @@ const Product = ({ product }) => {
   }
 
   let addToCartClassName = "add-to-cart"
-  let disabled = "false"
+  let disabled = false
   let addToCartText = "Add to Cart"
   if (product.totalInventory === 0) {
     addToCartClassName = "add-to-cart-disabled"
-    disabled = "true"
+    disabled = true
     addToCartText = "Sold Out!"
   }
 
