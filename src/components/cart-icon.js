@@ -1,4 +1,5 @@
 import React from "react"
+import { Link } from "gatsby"
 
 import { StoreContext } from "./store-context"
 import { StaticImage } from "gatsby-plugin-image"
@@ -14,13 +15,15 @@ const CartIcon = () => {
   }
 
   return (
-    <div className="cart-image-count-cont">
-      <StaticImage
-        className="cart-image-count-image"
-        src="../images/cart.jpeg"
-      />
-      <div className="cart-image-count-badge">{count}</div>
-    </div>
+    <Link className="cart-image-link" to="/cart">
+      <div className="cart-image-count-cont">
+        <StaticImage
+          className="cart-image-count-image"
+          src="../images/cart.jpeg"
+        />
+        <div className="cart-image-count-badge">{count}</div>
+      </div>
+    </Link>
   )
 }
 

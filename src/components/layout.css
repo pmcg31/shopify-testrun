@@ -87,6 +87,58 @@ body {
   margin-bottom: 0.25rem;
 }
 
+.cart-image-link,
+.shop-more-link {
+  text-decoration: none;
+}
+
+.cart-items-cont {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1rem;
+}
+
+.cart-item {
+  padding: 0.5rem 0.5rem;
+  background: lightgrey;
+  border-radius: 0.5rem;
+}
+
+.cart-item-quantity-control {
+  display: flex;
+  align-content: center;
+}
+
+.cart-item-quantity-caption {
+  padding-right: 0.75rem;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.cart-item-quantity,
+.cart-item-quantity-minus,
+.cart-item-quantity-plus {
+  height: 1.5rem;
+}
+
+.cart-item-quantity {
+  border: none;
+}
+
+.cart-item-quantity-minus,
+.cart-item-quantity-plus {
+  border: none;
+  width: 2.5ch;
+}
+
+.cart-item-quantity-minus {
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.cart-item-quantity-plus {
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
 article,
 aside,
 details,
