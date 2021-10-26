@@ -15,9 +15,6 @@ const IndexPage = ({ data }) => {
     <Layout>
       <Seo title="Home" />
       <h1>We sell stuff!</h1>
-      <button className="add-to-cart" onClick={clearCart}>
-        Clear Cart
-      </button>
       <div className="spacer" />
       {data.allShopifyProduct.edges.map(({ node }) => (
         <Product key={node.id} product={node} />
