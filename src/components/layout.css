@@ -40,6 +40,22 @@ body {
   width: 15rem;
 }
 
+.add-to-cart {
+  cursor: pointer;
+  background: none;
+  background: #1f4c90;
+  border: 0;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  color: white;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.spacer {
+  padding-top: 1em;
+}
+
 article,
 aside,
 details,
