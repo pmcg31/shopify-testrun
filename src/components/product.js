@@ -23,10 +23,6 @@ const Product = ({ product }) => {
       product.priceRangeV2.minVariantPrice.currencyCode
   }
 
-  const isSoldOut = product.totalInventory === 0
-  const addToCartClassName = isSoldOut ? "add-to-cart-disabled" : "add-to-cart"
-  const addToCartText = isSoldOut ? "Sold Out!" : "Add to Cart"
-
   async function addProductToCart() {
     // Get the variant ID
     const variantId = product.variants[0].shopifyId
@@ -35,27 +31,34 @@ const Product = ({ product }) => {
     addToCart(variantId, 1)
   }
 
-  return (
-    // <div className="product-wrap">
-    //   <Image fixed={product.images[0].localFile.childImageSharp.fixed}/>
-    //     <h2>{product.title}</h2>
-    //     <p>{product.description}</p>
-    //     <button>Buy for {product.variants[0].priceV2.amount}</button>
-    // </div>
+  function seeOptions() {
+    // TODO: make this work
+  }
 
+  const justOneVariant = product.variants.length === 1
+  const isSoldOut = product.totalInventory === 0
+  const addToCartClassName = isSoldOut ? "add-to-cart-disabled" : "add-to-cart"
+  const addToCartText = isSoldOut
+    ? "Sold Out!"
+    : justOneVariant
+    ? "Add to Cart"
+    : "See Options"
+  const onClickFunc = justOneVariant ? addProductToCart : seeOptions
+
+  return (
     <div className="product" key={product.shopifyId}>
       <h3>{product.title}</h3>
       <GatsbyImage
         alt={product.title}
-        className="product-image"
         image={product.images[0].gatsbyImageData}
-        imgStyle={{ objectFit: "contain" }}
+        style={{ width: "10rem", height: "10rem" }}
+        imgStyle={{ width: "10rem", height: "10rem", objectFit: "contain" }}
       />
-      <p>{product.description}</p>
+      <p className="product-desc">{product.description}</p>
       <p className="product-price">{price}</p>
       <button
         className={addToCartClassName}
-        onClick={addProductToCart}
+        onClick={onClickFunc}
         disabled={isSoldOut}
       >
         {addToCartText}

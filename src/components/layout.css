@@ -36,10 +36,6 @@ body {
   /* font-size: 0.8rem; */
 }
 
-.product-image {
-  width: 15rem;
-}
-
 .add-to-cart,
 .add-to-cart-disabled {
   cursor: pointer;
