@@ -48,6 +48,16 @@ export const query = graphql`
             shopifyId
             price
           }
+          priceRangeV2 {
+            maxVariantPrice {
+              amount
+              currencyCode
+            }
+            minVariantPrice {
+              amount
+              currencyCode
+            }
+          }
           images {
             gatsbyImageData
           }
