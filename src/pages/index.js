@@ -1,5 +1,4 @@
 import * as React from "react"
-import { Link } from "gatsby"
 import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
@@ -14,10 +13,6 @@ const IndexPage = ({ data }) => {
       {data.allShopifyProduct.edges.map(({ node }) => (
         <Product key={node.id} product={node} />
       ))}
-      <p>
-        <Link to="/page-2/">Go to page 2</Link> <br />
-        <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-      </p>
     </Layout>
   )
 }
