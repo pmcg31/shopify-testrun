@@ -40,8 +40,8 @@ module.exports = {
     {
       resolve: `gatsby-source-shopify`,
       options: {
-        password: process.env.HEEHAW_API_PASSWORD,
-        storeUrl: process.env.HEEHAW_STORE_URL,
+        password: process.env.GATSBY_SHOPIFY_API_PASSWORD,
+        storeUrl: process.env.GATSBY_SHOPIFY_STORE_URL,
       },
     },
   ],

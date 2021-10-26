@@ -2,8 +2,8 @@ import * as React from "react"
 import Client from "shopify-buy"
 
 const client = Client.buildClient({
-  storefrontAccessToken: process.env.HEEHAW_STOREFRONT_TOKEN,
-  domain: process.env.HEEHAW_STORE_URL,
+  storefrontAccessToken: process.env.GATSBY_SHOPIFY_STOREFRONT_TOKEN,
+  domain: process.env.GATSBY_SHOPIFY_STORE_URL,
 })
 
 const defaultValues = {
