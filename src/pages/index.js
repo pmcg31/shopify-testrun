@@ -2,15 +2,11 @@ import * as React from "react"
 import { Link } from "gatsby"
 import { graphql } from "gatsby"
 
-import { StoreContext } from "../components/store-context"
-
 import Layout from "../components/layout"
 import Product from "../components/product"
 import Seo from "../components/seo"
 
 const IndexPage = ({ data }) => {
-  const { clearCart } = React.useContext(StoreContext)
-
   return (
     <Layout>
       <Seo title="Home" />
