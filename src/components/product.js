@@ -55,7 +55,9 @@ const Product = ({ product }) => {
         style={{ width: "10rem", height: "10rem" }}
         imgStyle={{ width: "10rem", height: "10rem", objectFit: "contain" }}
       />
-      <p className="product-desc">{ReactHtmlParser(product.descriptionHtml)}</p>
+      <div className="product-desc">
+        {ReactHtmlParser(product.descriptionHtml)}
+      </div>
       <p className="product-price">{price}</p>
       <button
         className="add-to-cart"
