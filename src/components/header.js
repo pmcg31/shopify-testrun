@@ -3,6 +3,8 @@ import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
+import CartIcon from "./cart-icon"
+
 const Header = ({ siteTitle }) => (
   <header
     style={{
@@ -30,7 +32,7 @@ const Header = ({ siteTitle }) => (
           {siteTitle}
         </Link>
       </h1>
-      <StaticImage className="cart-img" src="../images/cart.jpeg" />
+      <CartIcon />
     </div>
   </header>
 )

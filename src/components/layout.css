@@ -56,9 +56,31 @@ body {
   padding-top: 1em;
 }
 
-.cart-img img {
+.cart-image-count-cont {
+  display: grid;
+  grid-template-areas: solo;
+}
+
+.cart-image-count-image {
   height: 6em;
   width: 6em;
+  grid-area: solo;
+}
+
+.cart-image-count-badge {
+  display: inline;
+  background: red;
+  color: white;
+  height: 2rem;
+  border-radius: 1rem;
+  margin: auto;
+  padding: 0.25rem 0.5rem;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  grid-area: solo;
+  z-index: 2;
+  margin-right: 0.25rem;
+  margin-bottom: 0.25rem;
 }
 
 article,

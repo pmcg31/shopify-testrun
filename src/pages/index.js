@@ -6,7 +6,6 @@ import { StoreContext } from "../components/store-context"
 
 import Layout from "../components/layout"
 import Product from "../components/product"
-import CartCount from "../components/cart-count"
 import Seo from "../components/seo"
 
 const IndexPage = ({ data }) => {
@@ -16,7 +15,6 @@ const IndexPage = ({ data }) => {
     <Layout>
       <Seo title="Home" />
       <h1>We sell stuff!</h1>
-      <CartCount />
       <button className="add-to-cart" onClick={clearCart}>
         Clear Cart
       </button>
