@@ -36,9 +36,7 @@ body {
   /* font-size: 0.8rem; */
 }
 
-.add-to-cart,
-.add-to-cart-disabled {
-  cursor: pointer;
+.add-to-cart {
   background: none;
   border: 0;
   border-radius: 0.5rem;
@@ -50,10 +48,12 @@ body {
 
 .add-to-cart {
   background: #1f4c90;
+  cursor: pointer;
 }
 
-.add-to-cart-disabled {
+.add-to-cart:disabled {
   background: darkgrey;
+  cursor: initial;
 }
 
 .spacer {
@@ -123,12 +123,23 @@ body {
 
 .cart-item-quantity {
   border: none;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 .cart-item-quantity-minus,
 .cart-item-quantity-plus {
   border: none;
   width: 2.5ch;
+  background: #1f4c90;
+  color: white;
+}
+
+.cart-item-quantity-minus:disabled,
+.cart-item-quantity-plus:disabled {
+  border: none;
+  width: 2.5ch;
+  background: darkgrey;
 }
 
 .cart-item-quantity-minus {
@@ -137,6 +148,18 @@ body {
 
 .cart-item-quantity-plus {
   border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.cart-item-remove {
+  border: 2px solid red;
+  color: red;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  background: none;
+  border-radius: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
 article,

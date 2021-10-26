@@ -26,7 +26,7 @@ const CartIcon = () => {
       </Link>
       <div className="cart-items-cont">
         {checkout.lineItems.map(item => (
-          <div className="cart-items-cont">
+          <div className="cart-items-cont" key={item.id}>
             <CartItem item={item} id={item.id} />
           </div>
         ))}

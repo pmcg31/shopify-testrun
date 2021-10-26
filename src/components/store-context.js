@@ -8,6 +8,8 @@ const client = Client.buildClient({
 
 const defaultValues = {
   addToCart: () => {},
+  removeFromCart: () => {},
+  updateQuantity: () => {},
   clearCart: () => {},
   client,
   checkout: {
@@ -69,6 +71,28 @@ export const StoreProvider = ({ children }) => {
     })
   }
 
+  const removeFromCart = itemId => {
+    // create an array of line items
+    const lineItemsToRemove = [itemId]
+
+    // add line items to the checkout
+    const checkoutId = checkout.id
+    client.checkout.removeLineItems(checkoutId, lineItemsToRemove).then(res => {
+      setCheckout(res)
+    })
+  }
+
+  const updateQuantity = async (itemId, quantity) => {
+    // create an array of line items
+    const lineItemsToUpdate = [{ id: itemId, quantity }]
+
+    // update items in checkout
+    const checkoutId = checkout.id
+    client.checkout.updateLineItems(checkoutId, lineItemsToUpdate).then(res => {
+      setCheckout(res)
+    })
+  }
+
   const clearCart = () => {
     let lineItemIds = []
 
@@ -86,6 +110,8 @@ export const StoreProvider = ({ children }) => {
       value={{
         ...defaultValues,
         addToCart,
+        removeFromCart,
+        updateQuantity,
         clearCart,
         checkout,
       }}

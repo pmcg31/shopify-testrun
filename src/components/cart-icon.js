@@ -20,6 +20,7 @@ const CartIcon = () => {
         <StaticImage
           className="cart-image-count-image"
           src="../images/cart.jpeg"
+          alt="Donkey Cart"
         />
         <div className="cart-image-count-badge">{count}</div>
       </div>

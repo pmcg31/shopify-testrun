@@ -39,7 +39,6 @@ const Product = ({ product }) => {
 
   const justOneVariant = product.variants.length === 1
   const isSoldOut = product.totalInventory === 0
-  const addToCartClassName = isSoldOut ? "add-to-cart-disabled" : "add-to-cart"
   const addToCartText = isSoldOut
     ? "Sold Out!"
     : justOneVariant
@@ -59,7 +58,7 @@ const Product = ({ product }) => {
       <p className="product-desc">{ReactHtmlParser(product.descriptionHtml)}</p>
       <p className="product-price">{price}</p>
       <button
-        className={addToCartClassName}
+        className="add-to-cart"
         onClick={onClickFunc}
         disabled={isSoldOut}
       >
