@@ -11,8 +11,6 @@ const CartIcon = () => {
     checkout.lineItems.forEach(item => {
       count += item.quantity
     })
-
-    console.log(count)
   }
 
   return (
