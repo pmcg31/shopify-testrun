@@ -1,4 +1,6 @@
 import React from "react"
+import ReactHtmlParser from "react-html-parser"
+
 import { GatsbyImage } from "gatsby-plugin-image"
 import { StoreContext } from "./store-context"
 
@@ -54,7 +56,7 @@ const Product = ({ product }) => {
         style={{ width: "10rem", height: "10rem" }}
         imgStyle={{ width: "10rem", height: "10rem", objectFit: "contain" }}
       />
-      <p className="product-desc">{product.description}</p>
+      <p className="product-desc">{ReactHtmlParser(product.descriptionHtml)}</p>
       <p className="product-price">{price}</p>
       <button
         className={addToCartClassName}

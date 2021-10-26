@@ -37,7 +37,6 @@ export const query = graphql`
     allShopifyProduct {
       edges {
         node {
-          description
           descriptionHtml
           id
           title
