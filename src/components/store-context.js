@@ -11,6 +11,7 @@ const defaultValues = {
   removeFromCart: () => {},
   updateQuantity: () => {},
   clearCart: () => {},
+  doCheckout: () => {},
   client,
   checkout: {
     lineItems: [],
@@ -105,6 +106,10 @@ export const StoreProvider = ({ children }) => {
     })
   }
 
+  const doCheckout = () => {
+    window.open(checkout.webUrl)
+  }
+
   return (
     <StoreContext.Provider
       value={{
@@ -113,6 +118,7 @@ export const StoreProvider = ({ children }) => {
         removeFromCart,
         updateQuantity,
         clearCart,
+        doCheckout,
         checkout,
       }}
     >

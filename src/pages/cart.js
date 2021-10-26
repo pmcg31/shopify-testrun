@@ -4,9 +4,10 @@ import { Link } from "gatsby"
 import { StoreContext } from "../components/store-context"
 import Layout from "../components/layout"
 import CartItem from "../components/cart-item"
+import { doc } from "prettier"
 
 const CartIcon = () => {
-  const { checkout } = React.useContext(StoreContext)
+  const { checkout, doCheckout } = React.useContext(StoreContext)
 
   console.log("checkout:")
   console.log(checkout)
@@ -17,6 +18,10 @@ const CartIcon = () => {
     console.log("Item " + count)
     console.log(item)
   })
+
+  const checkoutNow = () => {
+    doCheckout()
+  }
 
   return (
     <Layout>
@@ -31,6 +36,14 @@ const CartIcon = () => {
           </div>
         ))}
       </div>
+      <div className="spacer" />
+      <button
+        className="add-to-cart checkout-now"
+        id="checkout-now"
+        onClick={checkoutNow}
+      >
+        Checkout Now
+      </button>
     </Layout>
   )
 }

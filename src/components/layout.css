@@ -162,6 +162,10 @@ body {
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 
+.checkout-now {
+  margin-left: 2rem;
+}
+
 article,
 aside,
 details,
