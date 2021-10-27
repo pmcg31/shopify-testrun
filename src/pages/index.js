@@ -1,5 +1,5 @@
 import * as React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 
 import Layout from "../components/layout"
 import Product from "../components/product"
@@ -11,7 +11,9 @@ const IndexPage = ({ data }) => {
       <Seo title="Home" />
       <h1>We sell stuff!</h1>
       {data.allShopifyProduct.edges.map(({ node }) => (
-        <Product key={node.id} product={node} />
+        <Link to={`/product/${node.handle}`}>
+          <Product key={node.id} product={node} />
+        </Link>
       ))}
     </Layout>
   )
@@ -24,8 +26,9 @@ export const query = graphql`
     allShopifyProduct {
       edges {
         node {
-          descriptionHtml
           id
+          descriptionHtml
+          handle
           title
           totalInventory
           shopifyId
