@@ -1,8 +1,35 @@
 import React from "react"
 import ReactHtmlParser from "react-html-parser"
-
 import { GatsbyImage } from "gatsby-plugin-image"
+import styled from "styled-components"
+
 import { StoreContext } from "./store-context"
+
+const StyledProduct = styled.div`
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  margin-bottom: 2rem;
+  padding: 1rem;
+`
+const ProductTitle = styled.h3`
+  font-size: 1.6rem;
+`
+const ProductDescription = styled.div``
+const ProductPrice = styled.p``
+const AddToCartButton = styled.button`
+  background: #1f4c90;
+  border: 0;
+  border-radius: 0.5rem;
+  color: white;
+  cursor: pointer;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  padding: 0.5rem 1rem;
+
+  &:disabled {
+    background: darkgrey;
+    cursor: initial;
+  }
+`
 
 const Product = ({ product }) => {
   const { addToCart } = React.useContext(StoreContext)
@@ -47,26 +74,22 @@ const Product = ({ product }) => {
   const onClickFunc = justOneVariant ? addProductToCart : seeOptions
 
   return (
-    <div className="product" key={product.shopifyId}>
-      <h3>{product.title}</h3>
+    <StyledProduct key={product.shopifyId}>
+      <ProductTitle>{product.title}</ProductTitle>
       <GatsbyImage
         alt={product.title}
         image={product.images[0].gatsbyImageData}
         style={{ width: "10rem", height: "10rem" }}
         imgStyle={{ width: "10rem", height: "10rem", objectFit: "contain" }}
       />
-      <div className="product-desc">
+      <ProductDescription>
         {ReactHtmlParser(product.descriptionHtml)}
-      </div>
-      <p className="product-price">{price}</p>
-      <button
-        className="add-to-cart"
-        onClick={onClickFunc}
-        disabled={isSoldOut}
-      >
+      </ProductDescription>
+      <ProductPrice>{price}</ProductPrice>
+      <AddToCartButton onClick={onClickFunc} disabled={isSoldOut}>
         {addToCartText}
-      </button>
-    </div>
+      </AddToCartButton>
+    </StyledProduct>
   )
 }
 

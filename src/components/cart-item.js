@@ -1,5 +1,61 @@
 import React from "react"
+import styled, { css } from "styled-components"
 import { StoreContext } from "./store-context"
+
+const StyledCartItem = styled.div`
+  background: lightgrey;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+`
+const ItemTitle = styled.h3``
+const QuantityControlWrapper = styled.div`
+  align-content: center;
+  display: flex;
+`
+const QuantityCaption = styled.p`
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding-right: 0.75rem;
+`
+const commonButtonStyles = css`
+  background: #1f4c90;
+  border: none;
+  color: white;
+  cursor: pointer;
+  height: 1.5rem;
+  width: 2.5ch;
+
+  &:disabled {
+    background: darkgrey;
+    border: none;
+  }
+`
+const MinusButton = styled.button`
+  ${commonButtonStyles}
+  border-radius: 0.5rem 0 0 0.5rem;
+`
+const PlusButton = styled.button`
+  ${commonButtonStyles}
+  border-radius: 0 0.5rem 0.5rem 0;
+`
+const QuantityInput = styled.input`
+  border: none;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  height: 1.5rem;
+`
+const RemoveFromCartButton = styled.button`
+  background: none;
+  border: 2px solid red;
+  border-radius: 0.5rem;
+  color: red;
+  cursor: pointer;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin-top: 0.5rem;
+  padding: 0.25rem 0.5rem;
+`
 
 const CartItem = ({ item }) => {
   const { removeFromCart, updateQuantity } = React.useContext(StoreContext)
@@ -39,41 +95,31 @@ const CartItem = ({ item }) => {
   }
 
   return (
-    <div className="cart-item">
-      <h3 className="cart-item-title">{item.title}</h3>
-      <div className="cart-item-quantity-control">
-        <div className="cart-item-quantity-caption">Quantity</div>
-        <button
-          className="cart-item-quantity-minus"
+    <StyledCartItem>
+      <ItemTitle>{item.title}</ItemTitle>
+      <QuantityControlWrapper>
+        <QuantityCaption>Quantity</QuantityCaption>
+        <MinusButton
           id={quantityMinusId}
           onClick={onMinusClicked}
           disabled={minusDisabled}
         >
           -
-        </button>
-        <input
-          type="text"
-          className="cart-item-quantity"
+        </MinusButton>
+        <QuantityInput
           id={quantityId}
+          type="text"
           onChange={onQuantityChanged}
           defaultValue={item.quantity}
         />
-        <button
-          className="cart-item-quantity-plus"
-          id={quantityPlusId}
-          onClick={onPlusClicked}
-        >
+        <PlusButton id={quantityPlusId} onClick={onPlusClicked}>
           +
-        </button>
-      </div>
-      <button
-        className="cart-item-remove"
-        id={quantityRemoveId}
-        onClick={onQuantityRemove}
-      >
+        </PlusButton>
+      </QuantityControlWrapper>
+      <RemoveFromCartButton id={quantityRemoveId} onClick={onQuantityRemove}>
         Remove from Cart
-      </button>
-    </div>
+      </RemoveFromCartButton>
+    </StyledCartItem>
   )
 }
 

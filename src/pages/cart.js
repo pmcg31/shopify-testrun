@@ -1,9 +1,39 @@
 import React from "react"
 import { Link } from "gatsby"
+import styled from "styled-components"
 
 import { StoreContext } from "../components/store-context"
 import Layout from "../components/layout"
-import CartItem from "../components/cart-item"
+import CartItem, { commonButtonStyles } from "../components/cart-item"
+
+const Title = styled.h1``
+const StyledShopMoreLink = styled(Link)`
+  text-decoration: none;
+`
+const CartItemsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1rem;
+`
+const Spacer = styled.div`
+  padding-top: 1em;
+`
+const CheckoutNowButton = styled.button`
+  background: #1f4c90;
+  border: none;
+  border-radius: 0.5rem;
+  color: white;
+  cursor: pointer;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  margin-left: 2rem;
+  padding: 0.5rem 1rem;
+
+  &:disabled {
+    background: darkgrey;
+    border: none;
+  }
+`
 
 const CartIcon = () => {
   const { checkout, doCheckout } = React.useContext(StoreContext)
@@ -26,26 +56,21 @@ const CartIcon = () => {
 
   return (
     <Layout>
-      <h1>Your Shopping Cart</h1>
-      <Link className="shop-more-link" to="/">
-        &lt; Continue Shopping
-      </Link>
-      <div className="cart-items-cont">
+      <Title>Your Shopping Cart</Title>
+      <StyledShopMoreLink to="/">&lt; Continue Shopping</StyledShopMoreLink>
+      <CartItemsContainer>
         {checkout.lineItems.map(item => (
-          <div className="cart-items-cont" key={item.id}>
-            <CartItem item={item} id={item.id} />
-          </div>
+          <CartItem item={item} id={item.id} />
         ))}
-      </div>
-      <div className="spacer" />
-      <button
-        className="add-to-cart checkout-now"
+      </CartItemsContainer>
+      <Spacer />
+      <CheckoutNowButton
         id="checkout-now"
         onClick={checkoutNow}
         disabled={isCartEmpty}
       >
         Checkout Now
-      </button>
+      </CheckoutNowButton>
     </Layout>
   )
 }
