@@ -27,6 +27,7 @@ export const query = graphql`
       edges {
         node {
           id
+          description
           descriptionHtml
           handle
           title

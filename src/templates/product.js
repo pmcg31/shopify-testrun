@@ -28,6 +28,7 @@ export const ProductPageQuery = graphql`
   query productPage($productId: String!) {
     shopifyProduct(id: { eq: $productId }) {
       id
+      description
       descriptionHtml
       title
       totalInventory
