@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 
 import CartIcon from "./cart-icon"
 
-const Header = ({ siteTitle }) => (
+const Header = ({ siteTitle = "" }) => (
   <header
     style={{
       background: `#1f4c90`,
@@ -39,10 +39,6 @@ const Header = ({ siteTitle }) => (
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
 }
 
 export default Header
