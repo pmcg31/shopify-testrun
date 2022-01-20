@@ -6,19 +6,20 @@ import styled from "styled-components"
 import CartIcon from "./cart-icon"
 
 const StyledHeader = styled.header`
-  background: #1f4c90;
-  margin-bottom: 1.45rem;
+  background: #fff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 3rem;
 `
 const Container = styled.div`
   margin: 0 auto;
-  max-width: 960px;
+  max-width: 1200px;
   padding: 1.45rem 1.0875rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 `
 const StyledBrandLink = styled(Link)`
-  color: #e74b8c;
+  color: #000;
   font-size: 3rem;
   font-weight: bold;
   margin: 0;

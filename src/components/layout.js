@@ -15,12 +15,12 @@ import Header from "./header"
 
 const StyledMain = styled.main`
   margin: 0 auto;
-  max-width: 960px;
+  max-width: 1200px;
   padding: 0 1rem 1rem 1rem;
 `
 const StyledFooter = styled.footer`
   margin: 2rem auto 0;
-  max-width: 960px;
+  max-width: 1200px;
   padding: 1rem;
 `
 const Layout = ({ children }) => {
@@ -39,9 +39,7 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <StyledMain>{children}</StyledMain>
       <StyledFooter>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.com">Gatsby</a>
+        © {new Date().getFullYear()}, River Dog Woodcraft
       </StyledFooter>
     </>
   )

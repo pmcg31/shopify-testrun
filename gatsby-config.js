@@ -4,10 +4,10 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `🦄 It's Hee Haw Donkey Time!`,
-    description: `If at first you don't succeed, keep on suckin' until you do.`,
-    author: `The Cool Kids`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    title: `River Dog Woodcraft`,
+    description: `Custom woodworking and furniture by the River Dog.`,
+    author: `@riverdogwoodcraft`,
+    siteUrl: `https://river-dog-woodcraft.myshopify.com/`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -24,13 +24,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `River Dog Woodcraft`,
+        short_name: `RDWC`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#0f0f0f`,
+        theme_color: `#0f0f0f`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/river_dog_woodcraft_logo_031819_M11_final_logos_black_round_512x512.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-styled-components`,
